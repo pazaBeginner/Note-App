@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="brand-container">
+        <a href="#">Notes App</a>
+      </div>
+
+      <div class="add-note">
+        <a href="#" id="add-button"
+          ><i class="fa-solid fa-plus"></i> Add note</a
+        >
+      </div>
+    </header>
+    <main>
+      <div class="container-modal">
+        <div class="modal">
+          <a href="#" id="close-modal"><i class="fa-solid fa-xmark"></i></a>
+          <form action="#" id="form-note">
+            <div class="form-grup">
+              <label for="title">Judul :</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                minlength="3"
+                pattern="^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
+                autocomplete="off"
+                aria-describedby="title-validate"
+                placeholder="Example"
+                required
+              />
+              <p id="title-validate" aria-live="polite"></p>
+            </div>
+            <div class="form-grup">
+              <label for="descriptionContent">Catatan :</label>
+              <textarea
+                style="resize: vertical"
+                name="descriptionContent"
+                id="descriptionContent"
+                aria-describedby="description-validation"
+                placeholder="tulis catatanmu..."
+                minlength="5"
+                required
+              ></textarea>
+              <p id="description-validation" aria-live="polite"></p>
+            </div>
+            <button id="save-note">add note</button>
+          </form>
+        </div>
+      </div>
+      <section class="content-container">
+        <h2>All Notes</h2>
+        <div class="note-list"></div>
+        <div class="archive">
+          <archive-list></archive-list>
+        </div>
+      </section>
+
+      <aside>
+        <a href="#" class="btn-add"><i class="fa-solid fa-plus"></i></a>
+      </aside>
+    </main>
+    <footer>
+      <p>&COPY; <span class="date"></span> By Radifka Faza</p>
+    </footer>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
