@@ -57,6 +57,7 @@ function showModal() {
             form.reset();
             e.preventDefault(); 
             addNoteToList(valueTitle, noteValue);
+            modal.classList.remove('active');
         });
 
         titleInput.addEventListener('change', customValidationUsernameHandler);
